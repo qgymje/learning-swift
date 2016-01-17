@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class DetailViewController: UIViewController {
 
@@ -32,6 +33,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "shareTapped")
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +50,16 @@ class DetailViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
+    }
+    
+    func shareTapped() {
+        //let activity = UIActivityViewController(activityItems: [imageview.image!], applicationActivities: [])
+        //presentViewController(activity, animated: true, completion: nil)
+        let social = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+        social.setInitialText("hello world!")
+        social.addImage(imageview.image!)
+        social.addURL(NSURL(string: "http://weibo.com/"))
+        presentViewController(social, animated: true, completion: nil)
     }
 }
 
