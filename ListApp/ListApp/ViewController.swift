@@ -41,7 +41,8 @@ class tableViewController: UITableViewController, UITextFieldDelegate {
         return listItems.count
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         managedContext.deleteObject(listItems[indexPath.row])
