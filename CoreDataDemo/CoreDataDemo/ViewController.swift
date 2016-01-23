@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         
         let userRequest = NSFetchRequest(entityName: "Users")
         userRequest.returnsObjectsAsFaults = false
-        userRequest.predicate = NSPredicate(format: "username=%@", "qgymje")
+        userRequest.predicate = NSPredicate(format: "username=%@", userName.text!)
         
         do {
             let results = try context.executeFetchRequest(userRequest) as NSArray
