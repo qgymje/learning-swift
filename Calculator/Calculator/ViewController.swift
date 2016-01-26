@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var display: UILabel!
     
     var isTypingNumber = false
-    var numbers = [Double]()
+    
+    var brain = CalculatorBrain()
+    
     var displayValue: Double {
         get {
             return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
@@ -35,58 +37,25 @@ class ViewController: UIViewController {
     
     @IBAction func enter() {
         isTypingNumber = false
-        numbers.append(displayValue)
-        print("operation = \(numbers)")
+        if let result = brain.pushOperand(displayValue) {
+           displayValue = result
+        }
     }
     
-    @IBAction func appendOperator(sender: UIButton) {
-        let operation = sender.currentTitle!
+    @IBAction func operate(sender: UIButton) {
         if isTypingNumber {
             enter()
         }
-        switch operation {
-            case "÷": performeOperation(divide)
-            
-            case "×": performeOperation({(d1: Double, d2: Double) -> Double in
-                return d1 * d2
-            })
-            
-            case "+": performeOperation({(d1,d2) in
-                d1 + d2
-            })
-            
-            case "−": performeOperation { $1 - $0 }
-            
-            case "√": performeOperation { sqrt($0) }
-            
-            default: break
+        
+        if let operation = sender.currentTitle {
+            if let result = brain.performOperation(operation) {
+                displayValue = result
+            } else {
+                
+            }
         }
     }
     
-    private func performeOperation(operation: (Double, Double) -> Double) {
-        displayValue = operation(fetchAnumber(), fetchAnumber())
-        enter()
-    }
-    
-    private func performeOperation(operation: ( Double) -> Double) {
-        displayValue = operation(fetchAnumber())
-        enter()
-    }
-    
-    private func divide(d1: Double, d2: Double ) -> Double {
-        if d1 != 0.0 {
-            return d2 / d1
-        }
-        print("error")
-        return 0.0
-    }
-    
-    private func fetchAnumber() ->Double {
-        if numbers.count > 0 {
-            return numbers.removeLast()
-        }
-        return 0.0
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
