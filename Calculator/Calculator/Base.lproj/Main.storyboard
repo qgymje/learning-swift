@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -115,7 +115,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <action selector="appendOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ln5-At-SIu"/>
+                                    <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FjK-lm-3n5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmT-xg-dmC">
@@ -124,7 +124,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="×"/>
                                 <connections>
-                                    <action selector="appendOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="939-D5-GUD"/>
+                                    <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d86-dv-Ubb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLJ-bP-ogD">
@@ -133,7 +133,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="−"/>
                                 <connections>
-                                    <action selector="appendOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ap-6D-oX6"/>
+                                    <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0qa-KN-bhR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBF-7i-hY2">
@@ -160,32 +160,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="÷"/>
                                 <connections>
-                                    <action selector="appendOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XI3-Rf-aYC"/>
+                                    <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OlW-eO-Lgt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yta-aY-zvl">
                                 <rect key="frame" x="469.5" y="90" width="102.5" height="119.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <connections>
-                                    <action selector="appendOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vuk-D3-d3B"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfD-8P-e0F">
                                 <rect key="frame" x="469.5" y="345" width="102.5" height="119.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <connections>
-                                    <action selector="appendOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zqh-NH-UAs"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4h-We-hWI">
                                 <rect key="frame" x="469.5" y="217.5" width="102.5" height="119.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <connections>
-                                    <action selector="appendOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="phN-wc-KcF"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWO-cR-AvG">
                                 <rect key="frame" x="469.5" y="472.5" width="102.5" height="119.5"/>
@@ -193,7 +184,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="√"/>
                                 <connections>
-                                    <action selector="appendOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pXr-In-DjP"/>
+                                    <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aBa-eI-Swm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxh-Tz-tSY">
