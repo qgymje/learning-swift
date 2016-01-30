@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreDataDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g8Z-sY-eGE">
+                                <rect key="frame" x="20" y="100" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="su4-hO-5bL">
+                                <rect key="frame" x="20" y="148" width="34" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Load"/>
+                                <connections>
+                                    <action selector="laod" destination="BYZ-38-t0r" eventType="touchUpInside" id="yx2-Q8-R6N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7h-1q-Vph">
+                                <rect key="frame" x="546" y="148" width="34" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save" destination="BYZ-38-t0r" eventType="touchUpInside" id="X5C-s3-qn7"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZKp-0C-sgx">
+                                <rect key="frame" x="20" y="50" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZKp-0C-sgx" secondAttribute="trailing" constant="20" id="78r-4j-XdN"/>
+                            <constraint firstItem="ZKp-0C-sgx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="9qr-zV-bLV"/>
+                            <constraint firstItem="g8Z-sY-eGE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Grs-US-BFS"/>
+                            <constraint firstItem="su4-hO-5bL" firstAttribute="top" secondItem="g8Z-sY-eGE" secondAttribute="bottom" constant="18" id="M7c-gI-BqR"/>
+                            <constraint firstItem="ZKp-0C-sgx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="aBt-ek-gUE"/>
+                            <constraint firstItem="g8Z-sY-eGE" firstAttribute="top" secondItem="ZKp-0C-sgx" secondAttribute="bottom" constant="20" id="jbh-rx-egW"/>
+                            <constraint firstItem="su4-hO-5bL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="keg-rq-e95"/>
+                            <constraint firstAttribute="trailing" secondItem="a7h-1q-Vph" secondAttribute="trailing" constant="20" id="mcF-Qh-Ilk"/>
+                            <constraint firstAttribute="trailing" secondItem="g8Z-sY-eGE" secondAttribute="trailing" constant="20" id="mda-vd-3PY"/>
+                            <constraint firstItem="a7h-1q-Vph" firstAttribute="top" secondItem="g8Z-sY-eGE" secondAttribute="bottom" constant="18" id="xOA-id-app"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="password" destination="g8Z-sY-eGE" id="iyR-UZ-tRI"/>
+                        <outlet property="userName" destination="ZKp-0C-sgx" id="dXa-AJ-lr1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886" y="648"/>
+        </scene>
+    </scenes>
+</document>
