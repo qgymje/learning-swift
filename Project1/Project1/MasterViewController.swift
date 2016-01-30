@@ -57,6 +57,13 @@ class MasterViewController: UITableViewController {
             }
         }
     }
+    
+    
+    
+    
+    
+    
+    
 
     // MARK: - Table View
 
@@ -75,7 +82,21 @@ class MasterViewController: UITableViewController {
         cell.textLabel!.text = object
         return cell
     }
+    
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true

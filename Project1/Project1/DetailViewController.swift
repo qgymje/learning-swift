@@ -9,22 +9,24 @@
 import UIKit
 import Social
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var imageview: UIImageView!
-    
-    var detailItem: String? {
+    @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
-            // Update the view.
-            self.configureView()
+            scrollView.delegate = self
         }
     }
+    
+    var detailItem: String?
 
     func configureView() {
         // Update the user interface for the detail item.
         if let detail: String = self.detailItem {
-            if let image = imageview  {
-                image.image = UIImage(named: detail)
+            if let image = UIImage(named: detail) {
+                imageview.image = image
+                scrollView.contentSize = image.size
+                scrollView.addSubview(imageview)
             }
         }
     }
@@ -61,5 +63,15 @@ class DetailViewController: UIViewController {
         social.addURL(NSURL(string: "http://weibo.com/"))
         presentViewController(social, animated: true, completion: nil)
     }
+    
+    func scrollViewDidZoom(scrollView: UIScrollView) {
+        print("zooming...")
+    }
+    
+    func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat) {
+        print("withView = \(view)")
+        print("atScale = \(scale)")
+    }
+    
 }
 
