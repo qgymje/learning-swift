@@ -2,7 +2,7 @@
 //  MasterViewController.swift
 //  Project7
 //
-//  Created by jimmychain on 1/25/16.
+//  Created by jimmychain on 1/28/16.
 //  Copyright © 2016 jimmychain. All rights reserved.
 //
 
@@ -10,8 +10,8 @@ import UIKit
 
 class MasterViewController: UITableViewController {
 
+    var detailViewController: DetailViewController? = nil
     var objects = [AnyObject]()
-    var detailViewControlelr: DetailViewController?
 
 
     override func viewDidLoad() {
@@ -21,8 +21,15 @@ class MasterViewController: UITableViewController {
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
-        
-        detailViewControlelr = DetailViewController()
+        if let split = self.splitViewController {
+            let controllers = split.viewControllers
+            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+        }
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
+        super.viewWillAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,29 +43,21 @@ class MasterViewController: UITableViewController {
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
 
+    // MARK: - Segues
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("call me maybe")
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let object = objects[indexPath.row] as! NSDate
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = "\(object)"
+                controller.detailItem = object
+                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
-    
+
     // MARK: - Table View
-    /*
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let text: NSDate = objects[indexPath.row] as? NSDate{
-            if let detailVC = detailViewControlelr {
-                print("\(text)")
-                detailVC.detailItem = "\(text)"
-                presentViewController(detailVC, animated: true, completion: nil)
-            }
-        }
-    }
-    */
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
